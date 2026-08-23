@@ -1,0 +1,145 @@
+/* 1. RESET Y CONFIGURACIÓN BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #0f172a; /* Fondo azul muy oscuro tipo Cyber */
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2. TARJETA ESTILO GLASSMORPHISM (Efecto cristal translúcido) */
+.profile-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px); /* Desenfoca lo que esté detrás */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 35px 25px;
+  border-radius: 24px;
+  text-align: center;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Animación de levitación cuando pasas el cursor */
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(99, 102, 241, 0.25);
+}
+
+/* 3. AVATAR CON ANILLO GIRATORIO EN GRADIENTE */
+.avatar-container {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+}
+
+.avatar-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #6366f1, #a855f7, #ec4899);
+  animation: spin 4s linear infinite; /* Rotación continua */
+}
+
+/* Animación CSS para girar el gradiente */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.avatar-text {
+  position: absolute;
+  inset: 4px; /* Crea el espacio interior del anillo */
+  background: #0f172a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* 4. TEXTOS Y ETIQUETAS */
+.name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 8px 0 20px;
+}
+
+/* 5. BLOQUE DE INFORMACIÓN (MATRÍCULA Y ESTADO) */
+.info-box {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-top: 2px;
+}
+
+.status-online {
+  color: #34d399; /* Verde Neón */
+}
+
+/* 6. BOTÓN CON GRADIENTE Y EFECTO BRILLO */
+.btn-primary {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+}
